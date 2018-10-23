@@ -82,7 +82,7 @@ $(function() {
    function format(data,field_separator,line_separator) {
         
         // Parameters normalization and default values
-        var text = text || "",
+        var data = data || [],
             field_separator = field_separator || "\t",
             line_separator = line_separator || "\n";
 
