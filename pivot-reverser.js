@@ -94,14 +94,39 @@ $(function() {
     }
 
     // Trigger transformation pipeline on input textarea change
-    $input.change(function() {
+    $("#converti").click(function() {
         $output.val(
             format(
                 reverse(
-                    parse($(this).val())
+                    parse($input.val())
                 )
             )
         );
     });
 
 });
+
+//Button
+function myPlayFunction() {
+    if(document.getElementById("input").value != ""){
+        document.getElementById("myDIV").classList.remove("out");
+        document.getElementById("myDIV").classList.add("in");
+         document.getElementById("myDIV").style.WebkitAnimationPlayState = "running"; // Safari 4.0 - 8.0
+         document.getElementById("myDIV").style.animationPlayState = "running";
+         document.getElementById("myDIV").style.animationDirection = "normal";
+    }
+    else{}
+}
+
+function myPlayFunction2() {
+    if(document.getElementById("myDIV").style.animationPlayState == "running" && document.getElementById("input").value != ""){
+        document.getElementById("myDIV").classList.remove("in");
+        document.getElementById("myDIV").classList.add("out"); 
+        document.getElementById("myDIV").style.WebkitAnimationPlayState = "running"; // Safari 4.0 - 8.0
+         document.getElementById("myDIV").style.animationDirection = "normal";
+         document.getElementById("myDIV").style.animationPlayState = "running";
+    }
+    else{}
+}
+
+
